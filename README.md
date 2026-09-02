@@ -11,3 +11,5 @@ Serve the repository root with any static HTTP server and open `index.html` thro
 ## Acknowledgments and license
 
 The page is based on the [Academic Project Page Template](https://github.com/eliahuhorwitz/Academic-project-page-template), which was adapted from the [Nerfies](https://nerfies.github.io/) project page. The website is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
+
+Official website: https://omniharness.github.io/
