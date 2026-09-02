@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="OmniHarness is a symbolic cognitive runtime for self-evolving visual agents that unifies reasoning, execution, memory, and feedback.">
+  <meta property="og:title" content="OmniHarness: A Symbolic Cognitive Runtime for Self-Evolving Visual Agents"/>
+  <meta property="og:description" content="A symbolic cognitive runtime for self-evolving visual agents that unifies reasoning, execution, memory, and feedback."/>
+  <meta name="twitter:title" content="OmniHarness: A Symbolic Cognitive Runtime for Self-Evolving Visual Agents">
+  <meta name="twitter:description" content="A symbolic cognitive runtime for self-evolving visual agents that unifies reasoning, execution, memory, and feedback.">
+  <meta name="twitter:card" content="summary">
+  <meta name="keywords" content="OmniHarness, visual agents, symbolic cognitive runtime, multimodal generation, self-evolving agents">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>OmniHarness: A Symbolic Cognitive Runtime for Self-Evolving Visual Agents</title>
+  <link rel="icon" type="image/png" href="static/images/omniharness-cat.png?v=2">
+  <link rel="apple-touch-icon" href="static/images/omniharness-cat.png?v=2">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css?v=13">
+
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/omniharness.js?v=6"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+              <span class="publication-brand">
+                <img class="publication-logo" src="static/images/omniharness-cat.png" alt="" aria-hidden="true">
+                <span class="omniharness-word" aria-label="OmniHarness">
+                  <span class="omniharness-letter brand-pink" aria-hidden="true">O</span>
+                  <span class="omniharness-letter brand-blue" aria-hidden="true">m</span>
+                  <span class="omniharness-letter brand-blush" aria-hidden="true">n</span>
+                  <span class="omniharness-letter brand-ice" aria-hidden="true">i</span>
+                  <span class="omniharness-letter brand-green" aria-hidden="true">H</span>
+                  <span class="omniharness-letter brand-pink" aria-hidden="true">a</span>
+                  <span class="omniharness-letter brand-blue" aria-hidden="true">r</span>
+                  <span class="omniharness-letter brand-blush" aria-hidden="true">n</span>
+                  <span class="omniharness-letter brand-ice" aria-hidden="true">e</span>
+                  <span class="omniharness-letter brand-green" aria-hidden="true">s</span>
+                  <span class="omniharness-letter brand-pink" aria-hidden="true">s</span>
+                </span>
+              </span><span class="publication-title-rest">: A Symbolic Cognitive Runtime for Self-Evolving Visual Agents</span>
+            </h1>
+            <!-- Author information will be added later. -->
+            <div class="publication-links">
+              <!-- arXiv link will be added later. -->
+              <span class="link-block">
+                <a class="external-link button is-normal is-rounded is-dark" aria-disabled="true">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              <!-- Code link will be added later. -->
+              <span class="link-block">
+                <a class="external-link button is-normal is-rounded is-dark" aria-disabled="true">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Visual generation agents have rapidly advanced with unified multimodal large language models (MLLMs) and multi-agent systems. Inspired by Kahneman’s dual-process theory, we argue that self-evolving visual intelligence requires moving beyond fast generation and deliberative reasoning toward a unified cognitive runtime that can organize, accumulate, and evolve intelligence over time. Existing MLLMs provide efficient generation but lack explicit reasoning, verification, and self-correction, while multi-agent systems improve collaboration but lack persistent mechanisms for capability evolution. Moreover, most agentic systems acquire new capabilities only in response to predefined tasks, making continual learning reactive rather than proactive. To address these limitations, we propose OmniHarness, a symbolic cognitive runtime for self-evolving visual agents. OmniHarness instantiates the harness paradigm by integrating reasoning, execution, memory, and feedback into a unified architecture that coordinates agent behaviors and transforms execution experiences into reusable knowledge. It further introduces curiosity-driven play, enabling agents to autonomously explore and practice novel but learnable tasks before downstream objectives are specified. Through symbolic knowledge evolution, OmniHarness converts acquired experiences into reusable capabilities without fine-tuning the underlying model. Extensive experiments demonstrate that OmniHarness improves complex visual generation tasks, supports continual capability expansion, and provides a plug-and-play mechanism for enhancing existing visual agent systems.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Image carousel -->
+<section class="hero is-small generation-showcase-section">
+  <div class="hero-body">
+    <div class="container generation-showcase-container">
+      <h2 class="title is-3">Text-to-Image Generation</h2>
+      <div class="showcase-carousel" data-showcase-carousel tabindex="0" aria-label="Text-to-image generation results">
+        <button class="showcase-arrow showcase-arrow-previous" type="button" aria-label="Show previous result">&#10094;</button>
+        <div class="showcase-viewport">
+          <article class="showcase-card is-active">
+            <p class="showcase-prompt">Generate an image of a beach at sunset with waves gently crashing on the shore.</p>
+            <div class="showcase-image-frame">
+              <img src="static/images/omniharness/t2i/006.png" alt="A beach at sunset with gentle waves" loading="eager">
+            </div>
+          </article>
+
+          <article class="showcase-card is-next">
+            <p class="showcase-prompt">Generate an image of people sitting around a campfire under a starry night sky.</p>
+            <div class="showcase-image-frame">
+              <img src="static/images/omniharness/t2i/015.png" alt="People around a campfire beneath a starry sky" loading="lazy">
+            </div>
+          </article>
+
+          <article class="showcase-card">
+            <p class="showcase-prompt">Generate an image of a soccer stadium filled with cheering fans during a match.</p>
+            <div class="showcase-image-frame">
+              <img src="static/images/omniharness/t2i/020.png" alt="A soccer stadium filled with cheering fans" loading="lazy">
+            </div>
+          </article>
+
+          <article class="showcase-card">
+            <p class="showcase-prompt">Generate an image of a pagoda in a quite forest. The pagoda should be placed in the left half of the image, with trees filling other areas.</p>
+            <div class="showcase-image-frame">
+              <img src="static/images/omniharness/t2i/079.png" alt="A pagoda in the left half of a quiet forest" loading="lazy">
+            </div>
+          </article>
+
+          <article class="showcase-card">
+            <p class="showcase-prompt">First generate an image of a pagoda in a quiet forest. The pagoda should be placed in the left half of the image, with trees filling other areas. Then convert the image into a painting with oil style.</p>
+            <div class="showcase-image-frame">
+              <img src="static/images/omniharness/t2i/125.png" alt="An oil painting of a pagoda in a quiet forest" loading="lazy">
+            </div>
+          </article>
+
+          <article class="showcase-card">
+            <p class="showcase-prompt">First generate an image of a ship floating in the sea. Then replace the background with a sunset sky.</p>
+            <div class="showcase-image-frame">
+              <img src="static/images/omniharness/t2i/140.png" alt="A ship at sea beneath a sunset sky" loading="lazy">
+            </div>
+          </article>
+
+          <article class="showcase-card">
+            <p class="showcase-prompt">Generate a poster for a series named &quot;Breaking Bad&quot;. The result should be a vertical image of the main character, Walter White, wearing a white vest with a serious expression, standing in front of a motorhome in the desert. The title &quot;Breaking Bad&quot; should be displayed in the top center of the image, followed by the tagline &quot;Say my name&quot;.</p>
+            <div class="showcase-image-frame">
+              <img src="static/images/omniharness/t2i/163.png" alt="A vertical Breaking Bad series poster" loading="lazy">
+            </div>
+          </article>
+
+          <article class="showcase-card">
+            <p class="showcase-prompt">Generate an image of a comic strip with four panels. The first panel should show a man waking up in bed, the second panel should show him looking at his smartphone, the third panel should show the smartphone displaying that it is Sunday, and the fourth panel should show the man continue to lie in bed.</p>
+            <div class="showcase-image-frame">
+              <img src="static/images/omniharness/t2i/167.png?v=2" alt="A four-panel comic strip about waking up on Sunday" loading="lazy">
+            </div>
+          </article>
+
+          <article class="showcase-card">
+            <p class="showcase-prompt">Design a book cover for a novel titled &quot;A Song of Ice and Fire&quot;. The cover should feature a dragon breathing fire, a snowy landscape, and a sword. The title of the book together with the author's name &quot;George R. R. Martin&quot; should be displayed prominently on the cover.</p>
+            <div class="showcase-image-frame">
+              <img src="static/images/omniharness/t2i/169.png" alt="A Song of Ice and Fire book cover" loading="lazy">
+            </div>
+          </article>
+
+          <article class="showcase-card is-prev">
+            <p class="showcase-prompt">Generate an image of a handwritten letter on a piece of paper. The letter should be addressed to &quot;My Darling&quot; and signed with the name &quot;Juliet&quot;. The content of the letter should express love and longing.</p>
+            <div class="showcase-image-frame">
+              <img src="static/images/omniharness/t2i/174.png" alt="A handwritten love letter signed by Juliet" loading="lazy">
+            </div>
+          </article>
+        </div>
+        <button class="showcase-arrow showcase-arrow-next" type="button" aria-label="Show next result">&#10095;</button>
+        <div class="showcase-pagination" aria-label="Choose a text-to-image result"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End image carousel -->
+
+
+
+
+<!-- Image carousel -->
+<section class="hero is-small is-light generation-showcase-section">
+  <div class="hero-body">
+    <div class="container generation-showcase-container">
+      <h2 class="title is-3">Reasoning Generation</h2>
+      <div class="showcase-carousel" data-showcase-carousel tabindex="0" aria-label="Reasoning generation results">
+        <button class="showcase-arrow showcase-arrow-previous" type="button" aria-label="Show previous result">&#10094;</button>
+        <div class="showcase-viewport">
+          <article class="showcase-card is-active">
+            <p class="showcase-prompt">An autumnal harvest celebration in North America, where a large fowl takes center stage on the dining table</p>
+            <div class="showcase-image-frame">
+              <img src="static/images/omniharness/reasoning/cultural_common/0017.png" alt="An autumnal North American harvest celebration centered on a large fowl" loading="eager">
+            </div>
+          </article>
+
+          <article class="showcase-card is-next">
+            <p class="showcase-prompt">A sport that ignites national fervor in Argentina, often associated with legendary players and historic rivalries</p>
+            <div class="showcase-image-frame">
+              <img src="static/images/omniharness/reasoning/cultural_common/0024.png" alt="A sport associated with national fervor in Argentina" loading="lazy">
+            </div>
+          </article>
+
+          <article class="showcase-card">
+            <p class="showcase-prompt">An image of a circular emblem representing balance and harmony in Taoist philosophy</p>
+            <div class="showcase-image-frame">
+              <img src="static/images/omniharness/reasoning/cultural_common/0051.png" alt="A circular Taoist emblem representing balance and harmony" loading="lazy">
+            </div>
+          </article>
+
+          <article class="showcase-card">
+            <p class="showcase-prompt">A beloved fruit in India, known as the 'king of fruits,' cherished for its rich flavor and cultural significance</p>
+            <div class="showcase-image-frame">
+              <img src="static/images/omniharness/reasoning/cultural_common/0172.png" alt="The fruit known as the king of fruits in India" loading="lazy">
+            </div>
+          </article>
+
+          <article class="showcase-card">
+            <p class="showcase-prompt">The animal that crows in the morning</p>
+            <div class="showcase-image-frame">
+              <img src="static/images/omniharness/reasoning/cultural_common/0210.png" alt="The animal that crows in the morning" loading="lazy">
+            </div>
+          </article>
+
+          <article class="showcase-card">
+            <p class="showcase-prompt">The grain that rice is derived from</p>
+            <div class="showcase-image-frame">
+              <img src="static/images/omniharness/reasoning/cultural_common/0357.png" alt="The grain plant from which rice is derived" loading="lazy">
+            </div>
+          </article>
+
+          <article class="showcase-card">
+            <p class="showcase-prompt">A park in London at 10 PM during the summer solstice</p>
+            <div class="showcase-image-frame">
+              <img src="static/images/omniharness/reasoning/spatio_temporal/0408.png" alt="A London park at 10 PM during the summer solstice" loading="lazy">
+            </div>
+          </article>
+
+          <article class="showcase-card">
+            <p class="showcase-prompt">The Great Wall of China when it's 3 PM in Los Angeles</p>
+            <div class="showcase-image-frame">
+              <img src="static/images/omniharness/reasoning/spatio_temporal/0439.png" alt="The Great Wall of China at the corresponding time when Los Angeles is at 3 PM" loading="lazy">
+            </div>
+          </article>
+
+          <article class="showcase-card">
+            <p class="showcase-prompt">A bear during summer.</p>
+            <div class="showcase-image-frame">
+              <img src="static/images/omniharness/reasoning/spatio_temporal/0558.png" alt="A bear during summer" loading="lazy">
+            </div>
+          </article>
+
+          <article class="showcase-card">
+            <p class="showcase-prompt">Generate an image of a bird and a dog, with the smaller animal on top and the larger below</p>
+            <div class="showcase-image-frame">
+              <img src="static/images/omniharness/reasoning/spatio_temporal/0621.png" alt="A bird and a dog with the smaller animal above the larger animal" loading="lazy">
+            </div>
+          </article>
+
+          <article class="showcase-card">
+            <p class="showcase-prompt">A hand holding a small coin in the immediate foreground, and a distant cityscape that seems very far away on the horizon</p>
+            <div class="showcase-image-frame">
+              <img src="static/images/omniharness/reasoning/spatio_temporal/0639.png" alt="A nearby coin held in front of a distant cityscape" loading="lazy">
+            </div>
+          </article>
+
+          <article class="showcase-card">
+            <p class="showcase-prompt">A close-up of a single feather right in front of you, and a flock of birds that looks really tiny soaring high overhead</p>
+            <div class="showcase-image-frame">
+              <img src="static/images/omniharness/reasoning/spatio_temporal/0643.png" alt="A close-up feather with a distant flock of birds overhead" loading="lazy">
+            </div>
+          </article>
+
+          <article class="showcase-card">
+            <p class="showcase-prompt">Migrating geese, emphasizing the shape of the formation</p>
+            <div class="showcase-image-frame">
+              <img src="static/images/omniharness/reasoning/natural_science/0756.png" alt="Migrating geese emphasizing the shape of their formation" loading="lazy">
+            </div>
+          </article>
+
+          <article class="showcase-card">
+            <p class="showcase-prompt">Sunflowers and the sun</p>
+            <div class="showcase-image-frame">
+              <img src="static/images/omniharness/reasoning/natural_science/0783.png" alt="Sunflowers and the sun" loading="lazy">
+            </div>
+          </article>
+
+          <article class="showcase-card">
+            <p class="showcase-prompt">A tennis ball and a iron block are in a transparent water tank</p>
+            <div class="showcase-image-frame">
+              <img src="static/images/omniharness/reasoning/natural_science/0813.png" alt="A tennis ball and an iron block in a transparent water tank" loading="lazy">
+            </div>
+          </article>
+
+          <article class="showcase-card">
+            <p class="showcase-prompt">A clear glass of water with a portion of a plastic drinking straw submerge</p>
+            <div class="showcase-image-frame">
+              <img src="static/images/omniharness/reasoning/natural_science/0870.png" alt="A plastic drinking straw partially submerged in a clear glass of water" loading="lazy">
+            </div>
+          </article>
+
+          <article class="showcase-card">
+            <p class="showcase-prompt">The aluminum is burning, highlighting the color</p>
+            <div class="showcase-image-frame">
+              <img src="static/images/omniharness/reasoning/natural_science/0920.png" alt="Burning aluminum with its characteristic color emphasized" loading="lazy">
+            </div>
+          </article>
+
+          <article class="showcase-card is-prev">
+            <p class="showcase-prompt">Copper sulfate solution mixing with sodium hydroxide solution in a beaker</p>
+            <div class="showcase-image-frame">
+              <img src="static/images/omniharness/reasoning/natural_science/0978.png" alt="Copper sulfate solution mixing with sodium hydroxide solution in a beaker" loading="lazy">
+            </div>
+          </article>
+        </div>
+        <button class="showcase-arrow showcase-arrow-next" type="button" aria-label="Show next result">&#10095;</button>
+        <div class="showcase-pagination" aria-label="Choose a reasoning generation result"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End image carousel -->
+
+
+
+<section class="hero is-small editing-showcase-section">
+  <div class="hero-body">
+    <div class="container editing-showcase-container">
+      <h2 class="title is-3">Image Editing</h2>
+      <div class="editing-showcase" data-editing-showcase tabindex="0" aria-label="Image editing results">
+        <div class="editing-stage">
+          <button class="editing-arrow editing-arrow-previous" type="button" aria-label="Show previous editing result">&#10094;</button>
+          <div class="editing-result">
+            <p class="editing-task" data-editing-task aria-live="polite">Remove the plate together with all the food inside it from the table.</p>
+            <div class="editing-media-grid" data-editing-media style="--editing-aspect: 1 / 1;">
+              <figure class="editing-panel">
+                <div class="editing-original-frame">
+                  <img data-editing-original src="static/images/omniharness/editing/originals/dish_table.png" alt="Original dish table image">
+                </div>
+                <figcaption>Original</figcaption>
+              </figure>
+
+              <figure class="editing-panel">
+                <div class="image-compare" data-image-compare style="--compare-position: 0%;">
+                  <img class="image-compare-original" data-compare-original src="static/images/omniharness/editing/originals/dish_table.png" alt="Original dish table image">
+                  <img class="image-compare-edited" data-editing-output src="static/images/omniharness/editing/outputs/060.png" alt="Edited dish table result">
+                  <span class="image-compare-label image-compare-label-original" aria-hidden="true">Original</span>
+                  <span class="image-compare-label image-compare-label-edited" aria-hidden="true">Edited</span>
+                  <div class="image-compare-divider" aria-hidden="true"><span></span></div>
+                  <input class="image-compare-control" data-compare-control type="range" min="0" max="100" value="0" aria-label="Reveal the edited result">
+                </div>
+                <figcaption>Interactive comparison</figcaption>
+              </figure>
+            </div>
+          </div>
+          <button class="editing-arrow editing-arrow-next" type="button" aria-label="Show next editing result">&#10095;</button>
+        </div>
+        <div class="editing-pagination" data-editing-pagination aria-label="Choose an image editing result"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Text-to-video generation carousel -->
+<section class="hero is-small is-light generation-showcase-section">
+  <div class="hero-body">
+    <div class="container generation-showcase-container">
+      <h2 class="title is-3">Text-to-Video Generation</h2>
+      <div class="showcase-carousel showcase-carousel-video" data-showcase-carousel tabindex="0" aria-label="Text-to-video generation results">
+        <button class="showcase-arrow showcase-arrow-previous" type="button" aria-label="Show previous result">&#10094;</button>
+        <div class="showcase-viewport">
+          <article class="showcase-card is-active">
+            <p class="showcase-prompt">Generate a 3-second video composed of two clips. The first clip should show a sunrise over the mountains, and the second clip should show a sunset over the ocean. Create a smooth transition between the two clips, where the first clip fades into the second clip.</p>
+            <div class="showcase-video-frame">
+              <video muted loop playsinline preload="auto" aria-label="Generated video transitioning from a mountain sunrise to an ocean sunset">
+                <source src="static/videos/omniharness/t2v/sunrise-to-sunset.mp4" type="video/mp4">
+              </video>
+            </div>
+          </article>
+
+          <article class="showcase-card is-next">
+            <p class="showcase-prompt">Generate a 3-second video showing the progression of a person's age from a baby to an elderly person. The video should include smooth transitions between different age stages, with each stage showing the person's face in detail.</p>
+            <div class="showcase-video-frame">
+              <video muted loop playsinline preload="metadata" aria-label="Generated video showing a person's progression from baby to elderly">
+                <source src="static/videos/omniharness/t2v/age-progression.mp4" type="video/mp4">
+              </video>
+            </div>
+          </article>
+
+          <article class="showcase-card is-prev">
+            <p class="showcase-prompt">Generate a 2-second video showing the animation of a logo. The logo should consist of a red dragon surrounded by flames, representing power and strength. The animation should include the dragon breathing fire and the flames flickering.</p>
+            <div class="showcase-video-frame">
+              <video muted loop playsinline preload="metadata" aria-label="Generated animation of a red dragon logo surrounded by flames">
+                <source src="static/videos/omniharness/t2v/dragon-logo.mp4" type="video/mp4">
+              </video>
+            </div>
+          </article>
+        </div>
+        <button class="showcase-arrow showcase-arrow-next" type="button" aria-label="Show next result">&#10095;</button>
+        <div class="showcase-pagination" aria-label="Choose a text-to-video result"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End text-to-video generation carousel -->
+
+<!-- Image-to-video generation carousel -->
+<section class="hero is-small generation-showcase-section">
+  <div class="hero-body">
+    <div class="container generation-showcase-container">
+      <h2 class="title is-3">Image-to-Video Generation</h2>
+      <div class="showcase-carousel showcase-carousel-paired" data-showcase-carousel tabindex="0" aria-label="Image-to-video generation results">
+        <button class="showcase-arrow showcase-arrow-previous" type="button" aria-label="Show previous result">&#10094;</button>
+        <div class="showcase-viewport">
+          <article class="showcase-card is-active">
+            <p class="showcase-prompt">First follow the architecture style of the castle to generate a large church. Then convert it into a 2-second video.</p>
+            <div class="i2v-media-pair">
+              <div class="i2v-media-frame">
+                <span class="i2v-media-badge">Input Image</span>
+                <img src="static/media/omniharness/i2v/castle-input.png" alt="Input image of a large castle" loading="eager">
+              </div>
+              <div class="i2v-media-frame is-video">
+                <span class="i2v-media-badge">Generated Video</span>
+                <video muted loop playsinline preload="auto" aria-label="Generated video of a large church based on the castle's architecture">
+                  <source src="static/media/omniharness/i2v/castle-result.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </article>
+
+          <article class="showcase-card is-next">
+            <p class="showcase-prompt">Modify the photo into a 2-second colorful video of the woman turning her head and smiling.</p>
+            <div class="i2v-media-pair">
+              <div class="i2v-media-frame">
+                <span class="i2v-media-badge">Input Image</span>
+                <img src="static/media/omniharness/i2v/old-photo-input.jpg" alt="Input black-and-white photograph of a woman" loading="lazy">
+              </div>
+              <div class="i2v-media-frame is-video">
+                <span class="i2v-media-badge">Generated Video</span>
+                <video muted loop playsinline preload="metadata" aria-label="Generated colorful video of the woman turning her head and smiling">
+                  <source src="static/media/omniharness/i2v/old-photo-result.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </article>
+
+          <article class="showcase-card is-prev">
+            <p class="showcase-prompt">First repaint the scribble into a realistic gray pigeon. Then convert it into a 2-second video of the pigeon flying.</p>
+            <div class="i2v-media-pair">
+              <div class="i2v-media-frame">
+                <span class="i2v-media-badge">Input Image</span>
+                <img src="static/media/omniharness/i2v/pigeon-input.png" alt="Input scribble of a pigeon" loading="lazy">
+              </div>
+              <div class="i2v-media-frame is-video">
+                <span class="i2v-media-badge">Generated Video</span>
+                <video muted loop playsinline preload="metadata" aria-label="Generated video of a realistic gray pigeon flying">
+                  <source src="static/media/omniharness/i2v/pigeon-result.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </article>
+        </div>
+        <button class="showcase-arrow showcase-arrow-next" type="button" aria-label="Show next result">&#10095;</button>
+        <div class="showcase-pagination" aria-label="Choose an image-to-video result"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End image-to-video generation carousel -->
+
+<!-- Video-to-video generation carousel -->
+<section class="hero is-small is-light generation-showcase-section">
+  <div class="hero-body">
+    <div class="container generation-showcase-container">
+      <h2 class="title is-3">Video-to-Video Generation</h2>
+      <div class="showcase-carousel showcase-carousel-paired showcase-carousel-v2v" data-showcase-carousel tabindex="0" aria-label="Video-to-video generation results">
+        <button class="showcase-arrow showcase-arrow-previous" type="button" aria-label="Show previous result">&#10094;</button>
+        <div class="showcase-viewport">
+          <article class="showcase-card is-active">
+            <p class="showcase-prompt">Generate a new video of a beautiful girl speaking with the same lip movements and facial expressions as the old man.</p>
+            <div class="paired-media-pair v2v-media-pair">
+              <div class="paired-media-frame v2v-media-frame is-video">
+                <span class="paired-media-badge">Input Video</span>
+                <video muted loop playsinline preload="auto" aria-label="Input video of an old man speaking">
+                  <source src="static/media/omniharness/v2v/speaking-man-input.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="paired-media-frame v2v-media-frame is-video">
+                <span class="paired-media-badge">Generated Video</span>
+                <video muted loop playsinline preload="auto" aria-label="Generated video of a beautiful girl speaking with matching expressions">
+                  <source src="static/media/omniharness/v2v/girl-speaking-result.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </article>
+
+          <article class="showcase-card is-next">
+            <p class="showcase-prompt">Generate a new video of an animated cartoon character dancing with the same movements as the male idol.</p>
+            <div class="paired-media-pair v2v-media-pair">
+              <div class="paired-media-frame v2v-media-frame is-video">
+                <span class="paired-media-badge">Input Video</span>
+                <video muted loop playsinline preload="metadata" aria-label="Input video of a male idol dancing">
+                  <source src="static/media/omniharness/v2v/male-idol-input.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="paired-media-frame v2v-media-frame is-video">
+                <span class="paired-media-badge">Generated Video</span>
+                <video muted loop playsinline preload="metadata" aria-label="Generated video of a cartoon character performing the same dance">
+                  <source src="static/media/omniharness/v2v/cartoon-dance-result.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </article>
+
+          <article class="showcase-card">
+            <p class="showcase-prompt">Replace the background of the video with a football stadium filled with cheering fans.</p>
+            <div class="paired-media-pair v2v-media-pair">
+              <div class="paired-media-frame v2v-media-frame is-video">
+                <span class="paired-media-badge">Input Video</span>
+                <video muted loop playsinline preload="metadata" aria-label="Input video of a male idol dancing">
+                  <source src="static/media/omniharness/v2v/male-idol-input.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="paired-media-frame v2v-media-frame is-video">
+                <span class="paired-media-badge">Generated Video</span>
+                <video muted loop playsinline preload="metadata" aria-label="Generated video with a cheering football stadium background">
+                  <source src="static/media/omniharness/v2v/stadium-background-result.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </article>
+
+          <article class="showcase-card">
+            <p class="showcase-prompt">Modify the illumination of the video as a night scene with a soft moonlight shining through the window.</p>
+            <div class="paired-media-pair v2v-media-pair">
+              <div class="paired-media-frame v2v-media-frame is-video">
+                <span class="paired-media-badge">Input Video</span>
+                <video muted loop playsinline preload="metadata" aria-label="Input video of two babies">
+                  <source src="static/media/omniharness/v2v/two-babies-input.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="paired-media-frame v2v-media-frame is-video">
+                <span class="paired-media-badge">Generated Video</span>
+                <video muted loop playsinline preload="metadata" aria-label="Generated night scene illuminated by soft moonlight">
+                  <source src="static/media/omniharness/v2v/moonlit-babies-result.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </article>
+
+          <article class="showcase-card">
+            <p class="showcase-prompt">Refine the video to make the frames clear and sharp.</p>
+            <div class="paired-media-pair v2v-media-pair">
+              <div class="paired-media-frame v2v-media-frame is-video">
+                <span class="paired-media-badge">Input Video</span>
+                <video muted loop playsinline preload="metadata" aria-label="Input video of a baseball game">
+                  <source src="static/media/omniharness/v2v/baseball-game-input.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="paired-media-frame v2v-media-frame is-video">
+                <span class="paired-media-badge">Generated Video</span>
+                <video muted loop playsinline preload="metadata" aria-label="Generated baseball video with clearer and sharper frames">
+                  <source src="static/media/omniharness/v2v/baseball-sharpened-result.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </article>
+
+          <article class="showcase-card is-prev">
+            <p class="showcase-prompt">Change the cup material into a silver metallic cup with a reflective surface.</p>
+            <div class="paired-media-pair v2v-media-pair">
+              <div class="paired-media-frame v2v-media-frame is-video">
+                <span class="paired-media-badge">Input Video</span>
+                <video muted loop playsinline preload="metadata" aria-label="Input video of water being poured into a cup">
+                  <source src="static/media/omniharness/v2v/pour-water-input.webm" type="video/webm">
+                </video>
+              </div>
+              <div class="paired-media-frame v2v-media-frame is-video">
+                <span class="paired-media-badge">Generated Video</span>
+                <video muted loop playsinline preload="metadata" aria-label="Generated video featuring a reflective silver metallic cup">
+                  <source src="static/media/omniharness/v2v/metal-cup-result.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </article>
+        </div>
+        <button class="showcase-arrow showcase-arrow-next" type="button" aria-label="Show next result">&#10095;</button>
+        <div class="showcase-pagination" aria-label="Choose a video-to-video result"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End video-to-video generation carousel -->
+
+<!-- Comparison of visual generation paradigms -->
+<section class="hero is-small paradigm-comparison-section">
+  <div class="hero-body">
+    <div class="container generation-showcase-container">
+      <h2 class="title is-3">Comparison of Visual Generation Paradigms</h2>
+      <figure class="paradigm-comparison-figure">
+        <img class="paradigm-comparison-image" src="static/images/omniharness/comparison/visual-generation-paradigms.jpg" alt="Comparison of end-to-end unified MLLMs, existing multi-agent systems, and the OmniHarness symbolic cognitive runtime" loading="lazy" decoding="async">
+        <figcaption class="paradigm-comparison-description">
+          <p><strong>(a)</strong> End-to-end unified MLLMs enable fast multimodal generation but lack deliberate reasoning and self-correction.</p>
+          <p><strong>(b)</strong> Existing multi-agent systems improve collaborative reasoning but lack unified coordination and persistent knowledge accumulation.</p>
+          <p><strong>(c)</strong> OmniHarness introduces a symbolic cognitive runtime that enables coordinated reasoning, proactive learning, and reusable symbolic knowledge evolution.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+<!-- End comparison of visual generation paradigms -->
+
+<!-- Architecture of OmniHarness -->
+<section class="hero is-small is-light architecture-section">
+  <div class="hero-body">
+    <div class="container generation-showcase-container">
+      <h2 class="title is-3">Architecture of OmniHarness</h2>
+      <figure class="architecture-figure">
+        <img class="architecture-image" src="static/images/omniharness/architecture/omniharness-architecture.jpg" alt="Architecture of the OmniHarness symbolic cognitive runtime" loading="lazy" decoding="async">
+        <figcaption class="architecture-description">
+          <p>The symbolic cognitive runtime integrates curiosity-driven task proposal, Code-as-Policy workflow orchestration, and symbolic knowledge evolution. Its evolving knowledge supports continual OmniHarness execution, while a frozen snapshot enables plug-and-play reuse by external visual agents.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+<!-- End architecture of OmniHarness -->
+
+<!-- Comprehensive benchmark evaluation -->
+<section class="hero is-small benchmark-evaluation-section" id="benchmark-evaluation">
+  <div class="hero-body">
+    <div class="container generation-showcase-container">
+      <h2 class="title is-3">Comprehensive Benchmark Evaluation</h2>
+
+      <article class="benchmark-suite" id="comfybench">
+        <h3 class="benchmark-suite-title">1. ComfyBench</h3>
+        <p class="benchmark-suite-introduction">ComfyBench evaluates autonomous workflow construction, where each agent must produce an executable ComfyUI workflow that satisfies the task requirements.</p>
+
+        <section class="benchmark-result-group" aria-labelledby="comfybench-quantitative-title">
+          <h4 class="benchmark-result-title" id="comfybench-quantitative-title">Quantitative Results</h4>
+          <figure class="benchmark-figure benchmark-table-figure">
+            <div class="benchmark-table-scroll" role="region" aria-label="ComfyBench quantitative results" tabindex="0">
+              <table class="comfybench-table">
+                <thead>
+                  <tr>
+                    <th class="comfybench-agent-header" scope="col" rowspan="2">Agent</th>
+                    <th class="comfybench-metric-group" scope="colgroup" colspan="2">Vanilla</th>
+                    <th class="comfybench-metric-group" scope="colgroup" colspan="2">Complex</th>
+                    <th class="comfybench-metric-group" scope="colgroup" colspan="2">Creative</th>
+                    <th class="comfybench-metric-group" scope="colgroup" colspan="2">Total</th>
+                  </tr>
+                  <tr>
+                    <th scope="col">Pass&#8593;</th>
+                    <th scope="col">Res.&#8593;</th>
+                    <th scope="col">Pass&#8593;</th>
+                    <th scope="col">Res.&#8593;</th>
+                    <th scope="col">Pass&#8593;</th>
+                    <th scope="col">Res.&#8593;</th>
+                    <th scope="col">Pass&#8593;</th>
+                    <th scope="col">Res.&#8593;</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">GPT-4o + Zero-shot</th>
+                    <td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">GPT-4o + Few-shot</th>
+                    <td>32.0</td><td>27.0</td><td>16.7</td><td>8.3</td><td>7.5</td><td>0.0</td><td>22.5</td><td>16.0</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">GPT-4o + CoT</th>
+                    <td>44.0</td><td>29.0</td><td>11.7</td><td>8.3</td><td>7.5</td><td>0.0</td><td>28.0</td><td>17.0</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">GPT-4o + CoT-SC</th>
+                    <td>45.0</td><td>34.0</td><td>11.7</td><td>8.3</td><td>12.5</td><td>0.0</td><td>29.0</td><td>18.5</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Claude-3.5-Sonnet + RAG</th>
+                    <td>27.0</td><td>13.0</td><td>23.0</td><td>6.7</td><td>7.5</td><td>0.0</td><td>22.0</td><td>8.5</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Llama-3.1-70B + RAG</th>
+                    <td>58.0</td><td>32.0</td><td>23.0</td><td>10.0</td><td>15.0</td><td>5.0</td><td>39.0</td><td>20.0</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">GPT-4o + RAG</th>
+                    <td>62.0</td><td>41.0</td><td>45.0</td><td>21.7</td><td><span class="table-second">40.0</span></td><td>7.5</td><td>52.0</td><td>23.0</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">o1-mini + RAG</th>
+                    <td>32.0</td><td>16.0</td><td>21.7</td><td>8.3</td><td>12.5</td><td>7.5</td><td>25.0</td><td>12.0</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">o1-preview + RAG</th>
+                    <td><span class="table-second">70.0</span></td><td>46.0</td><td><span class="table-second">48.3</span></td><td>23.3</td><td>30.0</td><td>12.5</td><td>55.5</td><td>32.5</td>
+                  </tr>
+                  <tr class="comfybench-group-start comfybench-row-agent">
+                    <th scope="row">Llama-3.1-70B + ComfyAgent</th>
+                    <td>63.0</td><td>35.0</td><td>26.7</td><td>18.3</td><td>20.0</td><td>5.0</td><td>43.5</td><td>24.0</td>
+                  </tr>
+                  <tr class="comfybench-row-agent">
+                    <th scope="row">GPT-4o + ComfyAgent</th>
+                    <td>67.0</td><td>46.0</td><td><span class="table-second">48.3</span></td><td>21.7</td><td><span class="table-second">40.0</span></td><td>15.0</td><td><span class="table-second">56.0</span></td><td>32.5</td>
+                  </tr>
+                  <tr class="comfybench-row-comfymind">
+                    <th scope="row">GPT-4o + ComfyMind</th>
+                    <td><span class="table-best">100.0</span></td><td>92.0</td><td><span class="table-best">100.0</span></td><td><span class="table-best">85.0</span></td><td><span class="table-best">100.0</span></td><td>57.5</td><td><span class="table-best">100.0</span></td><td>83.0</td>
+                  </tr>
+                  <tr class="comfybench-row-comfymind">
+                    <th scope="row">DeepSeek-V3 + ComfyMind</th>
+                    <td><span class="table-best">100.0</span></td><td>90.0</td><td><span class="table-best">100.0</span></td><td>71.7</td><td><span class="table-best">100.0</span></td><td>60.0</td><td><span class="table-best">100.0</span></td><td>78.5</td>
+                  </tr>
+                  <tr class="comfybench-row-symbomni">
+                    <th scope="row">Gemini-2.5-Flash + SymbOmni</th>
+                    <td><span class="table-best">100.0</span></td><td><span class="table-second">95.0</span></td><td><span class="table-best">100.0</span></td><td><span class="table-second">83.3</span></td><td><span class="table-best">100.0</span></td><td><span class="table-second">67.5</span></td><td><span class="table-best">100.0</span></td><td>86.0</td>
+                  </tr>
+                  <tr class="comfybench-row-omniharness">
+                    <th scope="row"><span class="table-best">GPT-4o + OmniHarness</span></th>
+                    <td><span class="table-best">100.0</span></td><td><span class="table-second">95.0</span></td><td><span class="table-best">100.0</span></td><td>76.7</td><td><span class="table-best">100.0</span></td><td><span class="table-best">95.0</span></td><td><span class="table-best">100.0</span></td><td><span class="table-second">89.5</span></td>
+                  </tr>
+                  <tr class="comfybench-row-codex">
+                    <th scope="row"><span class="table-best">Codex GPT-4o + OmniHarness</span></th>
+                    <td><span class="table-best">100.0</span></td><td><span class="table-best">97.0</span></td><td><span class="table-best">100.0</span></td><td><span class="table-second">83.3</span></td><td><span class="table-best">100.0</span></td><td><span class="table-best">95.0</span></td><td><span class="table-best">100.0</span></td><td><span class="table-best">92.5</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <figcaption class="benchmark-caption"><strong>Table 1.</strong> Quantitative comparison on ComfyBench for autonomous workflow construction. Pass and Resolve are reported as percentages, with higher values indicating better performance.</figcaption>
+          </figure>
+        </section>
+
+        <section class="benchmark-result-group" aria-labelledby="comfybench-qualitative-title">
+          <h4 class="benchmark-result-title" id="comfybench-qualitative-title">Qualitative Results</h4>
+          <div class="benchmark-qualitative-stack">
+            <figure class="benchmark-figure">
+              <img class="benchmark-media" src="static/images/omniharness/benchmarks/comfybench/comfybench-creative-t2i.jpg" alt="Qualitative comparison on Creative text-to-image tasks including a series poster, handwritten letter, comic strip, and book cover" loading="lazy" decoding="async">
+              <figcaption class="benchmark-caption"><strong>Figure 1.</strong> Qualitative comparison on representative Creative T2I tasks from ComfyBench. These examples evaluate instruction following, text rendering, layout control, multi-panel consistency, and complex visual composition.</figcaption>
+            </figure>
+
+            <figure class="benchmark-figure">
+              <img class="benchmark-media" src="static/images/omniharness/benchmarks/comfybench/comfybench-i2i.jpg" alt="Qualitative comparison on image-to-image editing tasks using the same input table image" loading="lazy" decoding="async">
+              <figcaption class="benchmark-caption"><strong>Figure 2.</strong> Qualitative comparison on representative I2I tasks from ComfyBench. These examples evaluate precise target localization, instruction following, and the preservation of unrelated scene content.</figcaption>
+            </figure>
+
+            <figure class="benchmark-figure">
+              <img class="benchmark-media" src="static/images/omniharness/benchmarks/comfybench/comfybench-challenging-tasks.jpg" alt="Qualitative comparison on challenging ComfyBench image editing and reference-style transfer tasks" loading="lazy" decoding="async">
+              <figcaption class="benchmark-caption"><strong>Figure 3.</strong> Qualitative comparison on representative challenging tasks from the Complex and Creative subsets. These examples evaluate multi-step workflow composition, reference-style transfer, content preservation, restoration quality, and fine-grained instruction following.</figcaption>
+            </figure>
+          </div>
+        </section>
+      </article>
+
+      <article class="benchmark-suite" id="geneval">
+        <h3 class="benchmark-suite-title">2. GenEval</h3>
+        <p class="benchmark-suite-introduction">GenEval measures compositional text-to-image fidelity through single-object generation, two-object co-occurrence, counting, color, relative position, and attribute binding.</p>
+
+        <section class="benchmark-result-group" aria-labelledby="geneval-quantitative-title">
+          <h4 class="benchmark-result-title" id="geneval-quantitative-title">Quantitative Results</h4>
+          <figure class="benchmark-figure benchmark-table-figure">
+            <div class="benchmark-table-scroll" role="region" aria-label="GenEval quantitative results" tabindex="0">
+              <table class="comfybench-table geneval-table">
+                <thead>
+                  <tr>
+                    <th class="comfybench-agent-header" scope="col">Method</th>
+                    <th scope="col">Overall&#8593;</th>
+                    <th scope="col">Single Obj.&#8593;</th>
+                    <th scope="col">Two Obj.&#8593;</th>
+                    <th scope="col">Counting&#8593;</th>
+                    <th scope="col">Colors&#8593;</th>
+                    <th scope="col">Position&#8593;</th>
+                    <th scope="col">Attr. Bind.&#8593;</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="benchmark-table-section">
+                    <th scope="rowgroup" colspan="8">Frozen Text-Encoder Mapping Methods</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">SDv1.5</th>
+                    <td>0.43</td><td>0.97</td><td>0.38</td><td>0.35</td><td>0.76</td><td>0.04</td><td>0.06</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">SDv2.1</th>
+                    <td>0.50</td><td>0.98</td><td>0.51</td><td>0.44</td><td>0.85</td><td>0.07</td><td>0.17</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">SD-XL</th>
+                    <td>0.55</td><td>0.98</td><td>0.74</td><td>0.39</td><td>0.85</td><td>0.15</td><td>0.23</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">DALL-E 2</th>
+                    <td>0.52</td><td>0.94</td><td>0.66</td><td>0.49</td><td>0.77</td><td>0.10</td><td>0.19</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">SD3-Medium</th>
+                    <td>0.74</td><td><span class="table-second">0.99</span></td><td><span class="table-second">0.94</span></td><td>0.72</td><td>0.89</td><td>0.33</td><td>0.60</td>
+                  </tr>
+
+                  <tr class="benchmark-table-section">
+                    <th scope="rowgroup" colspan="8">Unified Multimodal Models</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">LlamaGen</th>
+                    <td>0.32</td><td>0.71</td><td>0.34</td><td>0.21</td><td>0.58</td><td>0.07</td><td>0.04</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">LWM</th>
+                    <td>0.47</td><td>0.93</td><td>0.41</td><td>0.46</td><td>0.79</td><td>0.09</td><td>0.15</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">SEED-X</th>
+                    <td>0.49</td><td>0.97</td><td>0.58</td><td>0.26</td><td>0.80</td><td>0.19</td><td>0.14</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Emu3-Gen</th>
+                    <td>0.54</td><td>0.98</td><td>0.71</td><td>0.34</td><td>0.81</td><td>0.17</td><td>0.21</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Janus</th>
+                    <td>0.61</td><td>0.97</td><td>0.68</td><td>0.30</td><td>0.84</td><td>0.46</td><td>0.42</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">JanusFlow</th>
+                    <td>0.63</td><td>0.97</td><td>0.59</td><td>0.45</td><td>0.83</td><td>0.53</td><td>0.42</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Janus-Pro-7B</th>
+                    <td>0.80</td><td><span class="table-second">0.99</span></td><td>0.89</td><td>0.59</td><td>0.90</td><td>0.79</td><td>0.66</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">GoT</th>
+                    <td>0.64</td><td><span class="table-second">0.99</span></td><td>0.69</td><td>0.67</td><td>0.85</td><td>0.34</td><td>0.27</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Bagel</th>
+                    <td>0.78</td><td>0.98</td><td><span class="table-second">0.94</span></td><td>0.76</td><td>0.91</td><td>0.69</td><td>0.70</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">GPT-Image-1</th>
+                    <td>0.84</td><td><span class="table-second">0.99</span></td><td>0.92</td><td>0.85</td><td>0.92</td><td>0.75</td><td>0.61</td>
+                  </tr>
+
+                  <tr class="benchmark-table-section">
+                    <th scope="rowgroup" colspan="8">Collaborative AI Systems</th>
+                  </tr>
+                  <tr class="comfybench-row-agent">
+                    <th scope="row">ComfyAgent</th>
+                    <td>0.32</td><td>0.69</td><td>0.30</td><td>0.33</td><td>0.50</td><td>0.04</td><td>0.04</td>
+                  </tr>
+                  <tr class="comfybench-row-comfymind">
+                    <th scope="row">ComfyMind</th>
+                    <td>0.90</td><td><span class="table-best">1.00</span></td><td><span class="table-best">1.00</span></td><td>0.96</td><td>0.97</td><td>0.63</td><td>0.81</td>
+                  </tr>
+                  <tr class="comfybench-row-symbomni">
+                    <th scope="row">SymbOmni</th>
+                    <td><span class="table-second">0.98</span></td><td><span class="table-best">1.00</span></td><td><span class="table-best">1.00</span></td><td><span class="table-second">0.99</span></td><td><span class="table-second">0.98</span></td><td><span class="table-second">0.97</span></td><td><span class="table-second">0.95</span></td>
+                  </tr>
+                  <tr class="comfybench-row-omniharness">
+                    <th scope="row"><span class="table-best">OmniHarness</span></th>
+                    <td><span class="table-best">0.997</span></td><td><span class="table-best">1.00</span></td><td><span class="table-best">1.00</span></td><td><span class="table-best">1.00</span></td><td><span class="table-best">1.00</span></td><td><span class="table-best">1.00</span></td><td><span class="table-best">0.98</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <figcaption class="benchmark-caption"><strong>Table 2.</strong> Quantitative comparison on GenEval. Scores measure the fraction of correctly generated images for six compositional tasks, including single-object generation, two-object co-occurrence, counting, color, relative position, and attribute binding.</figcaption>
+          </figure>
+        </section>
+
+        <section class="benchmark-result-group" aria-labelledby="geneval-qualitative-title">
+          <h4 class="benchmark-result-title" id="geneval-qualitative-title">Qualitative Results</h4>
+          <figure class="benchmark-figure">
+            <img class="benchmark-media" src="static/images/omniharness/benchmarks/geneval/geneval.jpg" alt="Qualitative comparison on GenEval compositional text-to-image generation tasks" loading="lazy" decoding="async">
+            <figcaption class="benchmark-caption"><strong>Figure 4.</strong> Qualitative comparison on representative GenEval tasks covering single-object generation, two-object co-occurrence, counting, color, spatial relations, and attribute binding.</figcaption>
+          </figure>
+        </section>
+      </article>
+
+      <article class="benchmark-suite" id="geneval2">
+        <h3 class="benchmark-suite-title">3. GenEval2</h3>
+        <p class="benchmark-suite-introduction">GenEval2 provides a fine-grained evaluation of text-to-image generation across object generation, attribute rendering, counting, spatial relations, and transitive verb relations.</p>
+
+        <section class="benchmark-result-group" aria-labelledby="geneval2-quantitative-title">
+          <h4 class="benchmark-result-title" id="geneval2-quantitative-title">Quantitative Results</h4>
+          <figure class="benchmark-figure benchmark-table-figure">
+            <div class="benchmark-table-scroll" role="region" aria-label="GenEval2 quantitative results" tabindex="0">
+              <table class="comfybench-table geneval2-table">
+                <thead>
+                  <tr>
+                    <th class="comfybench-agent-header" scope="col">Method</th>
+                    <th scope="col">Object&#8593;</th>
+                    <th scope="col">Attribute&#8593;</th>
+                    <th scope="col">Count&#8593;</th>
+                    <th scope="col">Position&#8593;</th>
+                    <th scope="col">Verb&#8593;</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="benchmark-table-section">
+                    <th scope="rowgroup" colspan="6">Stable Diffusion Model Series</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">SD 2.1</th>
+                    <td>55.1</td><td>30.4</td><td>22.3</td><td>11.7</td><td>17.8</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">SDXL</th>
+                    <td>74.1</td><td>42.4</td><td>28.7</td><td>16.0</td><td>28.9</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">SD3</th>
+                    <td>87.0</td><td>65.5</td><td>49.9</td><td>41.0</td><td>46.7</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">SD3.5-Large</th>
+                    <td>91.6</td><td>70.3</td><td>52.2</td><td>39.5</td><td>55.6</td>
+                  </tr>
+
+                  <tr class="benchmark-table-section">
+                    <th scope="rowgroup" colspan="6">State-of-the-Art Text-to-Image Models</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">FLUX.1-dev</th>
+                    <td>88.4</td><td>68.3</td><td>55.6</td><td>37.0</td><td>44.4</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Bagel + CoT</th>
+                    <td>92.9</td><td>75.9</td><td>55.6</td><td>50.6</td><td>57.8</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Qwen-Image</th>
+                    <td><span class="table-best">99.1</span></td><td>85.6</td><td>70.3</td><td>60.2</td><td>71.1</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Gemini 2.5 Flash Image</th>
+                    <td><span class="table-second">99.0</span></td><td><span class="table-second">91.4</span></td><td>70.1</td><td><span class="table-second">70.2</span></td><td><span class="table-second">86.7</span></td>
+                  </tr>
+
+                  <tr class="benchmark-table-section">
+                    <th scope="rowgroup" colspan="6">Collaborative AI Systems</th>
+                  </tr>
+                  <tr class="comfybench-row-symbomni">
+                    <th scope="row">SymbOmni</th>
+                    <td>95.0</td><td>83.6</td><td><span class="table-second">74.8</span></td><td>68.8</td><td>64.5</td>
+                  </tr>
+                  <tr class="comfybench-row-omniharness">
+                    <th scope="row"><span class="table-best">OmniHarness</span></th>
+                    <td>95.0</td><td><span class="table-best">94.0</span></td><td><span class="table-best">94.0</span></td><td><span class="table-best">76.9</span></td><td><span class="table-best">89.0</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <figcaption class="benchmark-caption"><strong>Table 3.</strong> Quantitative comparison on GenEval2. Scores report per-skill accuracy for object generation, attribute rendering, counting, spatial relations, and transitive verb relations.</figcaption>
+          </figure>
+        </section>
+
+        <section class="benchmark-result-group" aria-labelledby="geneval2-qualitative-title">
+          <h4 class="benchmark-result-title" id="geneval2-qualitative-title">Qualitative Results</h4>
+          <figure class="benchmark-figure">
+            <img class="benchmark-media" src="static/images/omniharness/benchmarks/geneval2/geneval2.jpg" alt="Qualitative comparison on GenEval2 fine-grained compositional text-to-image generation tasks" loading="lazy" decoding="async">
+            <figcaption class="benchmark-caption"><strong>Figure 5.</strong> Qualitative comparison on representative GenEval2 tasks covering object generation, attribute rendering, counting, spatial relations, and transitive verb relations.</figcaption>
+          </figure>
+        </section>
+      </article>
+
+      <article class="benchmark-suite" id="wise">
+        <h3 class="benchmark-suite-title">4. WISE</h3>
+        <p class="benchmark-suite-introduction">WISE evaluates world-knowledge-informed visual synthesis across cultural commonsense, temporal and spatial reasoning, biology, physics, and chemistry.</p>
+
+        <section class="benchmark-result-group" aria-labelledby="wise-quantitative-title">
+          <h4 class="benchmark-result-title" id="wise-quantitative-title">Quantitative Results</h4>
+          <figure class="benchmark-figure benchmark-table-figure">
+            <div class="benchmark-table-scroll" role="region" aria-label="WISE quantitative results" tabindex="0">
+              <table class="comfybench-table wise-table">
+                <thead>
+                  <tr>
+                    <th class="comfybench-agent-header" scope="col">Method</th>
+                    <th scope="col">Cultural&#8593;</th>
+                    <th scope="col">Time&#8593;</th>
+                    <th scope="col">Space&#8593;</th>
+                    <th scope="col">Biology&#8593;</th>
+                    <th scope="col">Physics&#8593;</th>
+                    <th scope="col">Chemistry&#8593;</th>
+                    <th scope="col">Overall&#8593;</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="benchmark-table-section">
+                    <th scope="rowgroup" colspan="8">Dedicated T2I Models</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">SDv1.5</th>
+                    <td>0.34</td><td>0.35</td><td>0.32</td><td>0.28</td><td>0.29</td><td>0.21</td><td>0.32</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">SDv2.1</th>
+                    <td>0.30</td><td>0.38</td><td>0.35</td><td>0.33</td><td>0.34</td><td>0.21</td><td>0.32</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">SD-XL</th>
+                    <td>0.43</td><td>0.48</td><td>0.47</td><td>0.44</td><td>0.45</td><td>0.27</td><td>0.43</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">SD3-Medium</th>
+                    <td>0.42</td><td>0.44</td><td>0.48</td><td>0.39</td><td>0.47</td><td>0.29</td><td>0.42</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">SD3.5-Medium</th>
+                    <td>0.43</td><td>0.50</td><td>0.52</td><td>0.41</td><td>0.53</td><td>0.33</td><td>0.45</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">SD3.5-Large</th>
+                    <td>0.44</td><td>0.50</td><td>0.58</td><td>0.44</td><td>0.52</td><td>0.31</td><td>0.46</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">PixArt-Alpha</th>
+                    <td>0.45</td><td>0.50</td><td>0.48</td><td>0.49</td><td>0.56</td><td>0.34</td><td>0.47</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Playground-v2.5</th>
+                    <td>0.49</td><td>0.58</td><td>0.55</td><td>0.43</td><td>0.48</td><td>0.33</td><td>0.49</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">FLUX.1-schnell</th>
+                    <td>0.39</td><td>0.44</td><td>0.50</td><td>0.31</td><td>0.44</td><td>0.26</td><td>0.40</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">FLUX.1-dev</th>
+                    <td>0.48</td><td>0.58</td><td>0.62</td><td>0.42</td><td>0.51</td><td>0.35</td><td>0.50</td>
+                  </tr>
+
+                  <tr class="benchmark-table-section">
+                    <th scope="rowgroup" colspan="8">Unified MLLM Models</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">Janus-1.3B</th>
+                    <td>0.16</td><td>0.26</td><td>0.35</td><td>0.28</td><td>0.30</td><td>0.14</td><td>0.23</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">JanusFlow-1.3B</th>
+                    <td>0.13</td><td>0.26</td><td>0.28</td><td>0.20</td><td>0.19</td><td>0.11</td><td>0.18</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Janus-Pro-1B</th>
+                    <td>0.20</td><td>0.28</td><td>0.45</td><td>0.24</td><td>0.32</td><td>0.16</td><td>0.26</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Janus-Pro-7B</th>
+                    <td>0.30</td><td>0.37</td><td>0.49</td><td>0.36</td><td>0.42</td><td>0.26</td><td>0.35</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Show-o</th>
+                    <td>0.28</td><td>0.36</td><td>0.40</td><td>0.23</td><td>0.33</td><td>0.22</td><td>0.30</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Show-o-512</th>
+                    <td>0.28</td><td>0.40</td><td>0.48</td><td>0.30</td><td>0.46</td><td>0.30</td><td>0.35</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">VILA-U-7B</th>
+                    <td>0.26</td><td>0.33</td><td>0.37</td><td>0.35</td><td>0.39</td><td>0.23</td><td>0.31</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Orthus-7B-base</th>
+                    <td>0.07</td><td>0.10</td><td>0.12</td><td>0.15</td><td>0.15</td><td>0.10</td><td>0.10</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Orthus-7B-instruct</th>
+                    <td>0.23</td><td>0.31</td><td>0.38</td><td>0.28</td><td>0.31</td><td>0.20</td><td>0.27</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Emu3</th>
+                    <td>0.34</td><td>0.45</td><td>0.48</td><td>0.41</td><td>0.45</td><td>0.27</td><td>0.39</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">BAGEL</th>
+                    <td>0.44</td><td>0.55</td><td>0.68</td><td>0.44</td><td>0.60</td><td>0.39</td><td>0.52</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">BAGEL + CoT</th>
+                    <td>0.76</td><td>0.69</td><td>0.75</td><td>0.65</td><td>0.75</td><td>0.58</td><td>0.70</td>
+                  </tr>
+
+                  <tr class="benchmark-table-section">
+                    <th scope="rowgroup" colspan="8">Closed-Source Models</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">GPT-Image-1</th>
+                    <td>0.81</td><td><span class="table-second">0.71</span></td><td><span class="table-best">0.89</span></td><td><span class="table-second">0.83</span></td><td><span class="table-second">0.79</span></td><td>0.74</td><td><span class="table-second">0.80</span></td>
+                  </tr>
+
+                  <tr class="benchmark-table-section">
+                    <th scope="rowgroup" colspan="8">Collaborative AI Systems</th>
+                  </tr>
+                  <tr class="comfybench-row-comfymind">
+                    <th scope="row">ComfyMind</th>
+                    <td>0.85</td><td>0.66</td><td>0.72</td><td>0.67</td><td>0.70</td><td><span class="table-second">0.78</span></td><td>0.76</td>
+                  </tr>
+                  <tr class="comfybench-row-symbomni">
+                    <th scope="row">SymbOmni</th>
+                    <td><span class="table-best">0.90</span></td><td>0.70</td><td>0.74</td><td>0.75</td><td>0.74</td><td><span class="table-second">0.78</span></td><td><span class="table-second">0.80</span></td>
+                  </tr>
+                  <tr class="comfybench-row-omniharness">
+                    <th scope="row"><span class="table-best">OmniHarness</span></th>
+                    <td><span class="table-second">0.88</span></td><td><span class="table-best">0.85</span></td><td><span class="table-second">0.86</span></td><td><span class="table-best">0.84</span></td><td><span class="table-best">0.82</span></td><td><span class="table-best">0.86</span></td><td><span class="table-best">0.86</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <figcaption class="benchmark-caption"><strong>Table 4.</strong> Quantitative comparison on WISE. WiScore evaluates world-knowledge-informed semantic synthesis across cultural commonsense, spatiotemporal reasoning, and natural sciences.</figcaption>
+          </figure>
+        </section>
+
+        <section class="benchmark-result-group" aria-labelledby="wise-qualitative-title">
+          <h4 class="benchmark-result-title" id="wise-qualitative-title">Qualitative Results</h4>
+          <figure class="benchmark-figure">
+            <img class="benchmark-media" src="static/images/omniharness/benchmarks/wise/wise.jpg" alt="Qualitative comparison on WISE world-knowledge-informed text-to-image generation tasks" loading="lazy" decoding="async">
+            <figcaption class="benchmark-caption"><strong>Figure 6.</strong> Qualitative comparison on representative WISE tasks spanning cultural, temporal, spatial, biological, physical, and chemical knowledge.</figcaption>
+          </figure>
+        </section>
+      </article>
+
+      <article class="benchmark-suite" id="reason-edit">
+        <h3 class="benchmark-suite-title">5. Reason-Edit</h3>
+        <p class="benchmark-suite-introduction">Reason-Edit evaluates instruction-based image editing through Understanding Scenarios with explicit target cues and Reasoning Scenarios with indirect commonsense descriptions, emphasizing accurate target localization and preservation of unrelated content.</p>
+
+        <section class="benchmark-result-group" aria-labelledby="reason-edit-quantitative-title">
+          <h4 class="benchmark-result-title" id="reason-edit-quantitative-title">Quantitative Results</h4>
+          <figure class="benchmark-figure benchmark-table-figure">
+            <div class="benchmark-table-scroll" role="region" aria-label="Reason-Edit quantitative results" tabindex="0">
+              <table class="comfybench-table reason-edit-table">
+                <thead>
+                  <tr>
+                    <th class="comfybench-agent-header" scope="col" rowspan="2">Method</th>
+                    <th class="comfybench-metric-group" scope="colgroup" colspan="4">Understanding Scenarios</th>
+                    <th class="comfybench-metric-group" scope="colgroup" colspan="4">Reasoning Scenarios</th>
+                  </tr>
+                  <tr>
+                    <th scope="col">PSNR&#8593;</th>
+                    <th scope="col">SSIM&#8593;</th>
+                    <th scope="col">LPIPS&#8595;</th>
+                    <th scope="col">CLIP Score&#8593;</th>
+                    <th scope="col">PSNR&#8593;</th>
+                    <th scope="col">SSIM&#8593;</th>
+                    <th scope="col">LPIPS&#8595;</th>
+                    <th scope="col">CLIP Score&#8593;</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">InstructPix2Pix</th>
+                    <td>21.576</td><td>0.721</td><td>0.089</td><td>22.762</td><td>24.234</td><td>0.707</td><td>0.083</td><td>19.413</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">MagicBrush</th>
+                    <td>18.120</td><td>0.680</td><td>0.143</td><td>22.620</td><td>22.101</td><td>0.694</td><td>0.113</td><td>19.755</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">InstructDiffusion</th>
+                    <td>23.258</td><td>0.743</td><td><span class="table-second">0.067</span></td><td>23.080</td><td>21.453</td><td>0.666</td><td>0.117</td><td>19.523</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">SmartEdit-7B</th>
+                    <td>22.049</td><td>0.731</td><td>0.087</td><td>23.611</td><td>25.258</td><td>0.742</td><td>0.055</td><td><span class="table-second">20.950</span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">SmartEdit-13B</th>
+                    <td><span class="table-second">23.596</span></td><td><span class="table-second">0.751</span></td><td>0.068</td><td>23.536</td><td><span class="table-best">25.757</span></td><td><span class="table-second">0.747</span></td><td><span class="table-second">0.051</span></td><td>20.777</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">InsightEdit</th>
+                    <td>23.588</td><td>0.749</td><td><span class="table-second">0.067</span></td><td><span class="table-second">23.734</span></td><td><span class="table-second">25.712</span></td><td><span class="table-second">0.747</span></td><td><span class="table-best">0.049</span></td><td>20.867</td>
+                  </tr>
+                  <tr class="comfybench-group-start comfybench-row-omniharness">
+                    <th scope="row"><span class="table-best">OmniHarness</span></th>
+                    <td><span class="table-best">23.894</span></td><td><span class="table-best">0.856</span></td><td><span class="table-best">0.053</span></td><td><span class="table-best">24.554</span></td><td>23.871</td><td><span class="table-best">0.796</span></td><td>0.052</td><td><span class="table-best">21.318</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <figcaption class="benchmark-caption"><strong>Table 5.</strong> Quantitative comparison on Reason-Edit. PSNR (dB), SSIM, and LPIPS measure background preservation, while CLIP Score measures foreground alignment with the target label.</figcaption>
+          </figure>
+        </section>
+
+        <section class="benchmark-result-group" aria-labelledby="reason-edit-qualitative-title">
+          <h4 class="benchmark-result-title" id="reason-edit-qualitative-title">Qualitative Results</h4>
+          <div class="benchmark-qualitative-stack">
+            <figure class="benchmark-figure">
+              <img class="benchmark-media" src="static/images/omniharness/benchmarks/reason-edit/understanding-scenarios.jpg" alt="Qualitative Reason-Edit results for Understanding Scenarios with explicit target cues" loading="lazy" decoding="async">
+              <figcaption class="benchmark-caption"><strong>Figure 7.</strong> Qualitative results of OmniHarness on Reason-Edit Understanding Scenarios. Editing targets are specified through explicit visual attributes, including position, color, mirror relations, relative size, and object addition.</figcaption>
+            </figure>
+
+            <figure class="benchmark-figure">
+              <img class="benchmark-media" src="static/images/omniharness/benchmarks/reason-edit/reasoning-scenarios.jpg" alt="Qualitative Reason-Edit results for Reasoning Scenarios with indirect commonsense descriptions" loading="lazy" decoding="async">
+              <figcaption class="benchmark-caption"><strong>Figure 8.</strong> Qualitative results of OmniHarness on Reason-Edit Reasoning Scenarios. Object removal or replacement is specified through indirect commonsense descriptions, while unrelated content should remain unchanged.</figcaption>
+            </figure>
+          </div>
+        </section>
+      </article>
+
+      <article class="benchmark-suite" id="kris-bench">
+        <h3 class="benchmark-suite-title">6. KRIS-Bench</h3>
+        <p class="benchmark-suite-introduction">KRIS-Bench evaluates factual, conceptual, and procedural knowledge in knowledge-intensive visual generation and editing, spanning reasoning, transformation, and multi-image composition tasks.</p>
+
+        <section class="benchmark-result-group" aria-labelledby="kris-bench-quantitative-title">
+          <h4 class="benchmark-result-title" id="kris-bench-quantitative-title">Quantitative Results</h4>
+          <figure class="benchmark-figure benchmark-table-figure">
+            <div class="benchmark-table-scroll" role="region" aria-label="KRIS-Bench quantitative results" tabindex="0">
+              <table class="comfybench-table krisbench-table">
+                <thead>
+                  <tr>
+                    <th class="comfybench-agent-header" scope="col">Method</th>
+                    <th scope="col">Factual&#8593;</th>
+                    <th scope="col">Conceptual&#8593;</th>
+                    <th scope="col">Procedural&#8593;</th>
+                    <th scope="col">Overall&#8593;</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="benchmark-table-section">
+                    <th scope="rowgroup" colspan="5">Closed-Source Models</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">GPT-Image-1</th>
+                    <td><span class="table-best">79.80</span></td><td><span class="table-second">81.37</span></td><td><span class="table-best">78.32</span></td><td><span class="table-best">80.09</span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Gemini 2.0 Flash Experimental</th>
+                    <td>65.26</td><td>59.65</td><td>62.90</td><td>62.41</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Doubao</th>
+                    <td>63.30</td><td>62.23</td><td>54.17</td><td>60.70</td>
+                  </tr>
+
+                  <tr class="benchmark-table-section">
+                    <th scope="rowgroup" colspan="5">Open-Source Models</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">BAGEL-Think</th>
+                    <td>55.77</td><td>59.44</td><td>39.26</td><td>53.36</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">BAGEL</th>
+                    <td>47.71</td><td>52.17</td><td>40.23</td><td>47.76</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Step1X-Edit</th>
+                    <td>45.52</td><td>48.01</td><td>31.82</td><td>43.29</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Emu2</th>
+                    <td>45.40</td><td>37.54</td><td>34.91</td><td>39.70</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">AnyEdit</th>
+                    <td>39.26</td><td>41.88</td><td>31.74</td><td>38.55</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">MagicBrush</th>
+                    <td>41.84</td><td>39.24</td><td>26.54</td><td>37.15</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">OmniGen</th>
+                    <td>33.11</td><td>28.02</td><td>23.89</td><td>28.85</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">InsPix2Pix</th>
+                    <td>23.33</td><td>25.59</td><td>17.28</td><td>22.82</td>
+                  </tr>
+
+                  <tr class="benchmark-table-section">
+                    <th scope="rowgroup" colspan="5">Collaborative AI Systems</th>
+                  </tr>
+                  <tr class="comfybench-row-symbomni">
+                    <th scope="row">SymbOmni</th>
+                    <td>73.33</td><td>72.28</td><td>70.29</td><td>72.18</td>
+                  </tr>
+                  <tr class="comfybench-row-omniharness">
+                    <th scope="row"><span class="table-best">OmniHarness</span></th>
+                    <td><span class="table-second">74.81</span></td><td><span class="table-best">81.89</span></td><td><span class="table-second">73.22</span></td><td><span class="table-second">77.33</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <figcaption class="benchmark-caption"><strong>Table 6.</strong> Quantitative comparison on KRIS-Bench. Scores evaluate factual, conceptual, and procedural knowledge, together with overall performance. Higher values indicate better performance.</figcaption>
+          </figure>
+        </section>
+
+        <section class="benchmark-result-group" aria-labelledby="kris-bench-qualitative-title">
+          <h4 class="benchmark-result-title" id="kris-bench-qualitative-title">Qualitative Results</h4>
+          <figure class="benchmark-figure">
+            <img class="benchmark-media" src="static/images/omniharness/benchmarks/kris-bench/krisbench.jpg" alt="Qualitative OmniHarness results on knowledge-intensive KRIS-Bench tasks" loading="lazy" decoding="async">
+            <figcaption class="benchmark-caption"><strong>Figure 9.</strong> Qualitative results of OmniHarness on representative KRIS-Bench tasks, covering factual, conceptual, and procedural knowledge through knowledge-guided generation, editing, visual reasoning, and multi-image composition.</figcaption>
+          </figure>
+        </section>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- End comprehensive benchmark evaluation -->
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>BibTeX entry will be available soon.</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            Built with the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener noreferrer">Academic Project Page Template</a>, adapted from <a href="https://nerfies.github.io" target="_blank" rel="noopener noreferrer">Nerfies</a>. Licensed under <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+  </html>
